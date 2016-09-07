@@ -31,6 +31,7 @@ public class Anagram {
         if(anagramCheck(wordsArrayList.get(i), wordsArrayList.get(j))){
           anagramWords.add(wordsArrayList.get(j));
           wordsArrayList.remove(j);
+          j--;
           addI = true;
         }
       }
@@ -38,6 +39,7 @@ public class Anagram {
         anagramWords.add(wordsArrayList.get(i));
         addI = false;
       }
+      anagramWords.add("|");
     }
     return anagramWords;
   }

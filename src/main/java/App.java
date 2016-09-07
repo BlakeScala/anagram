@@ -10,8 +10,16 @@ public class App {
     String userWords = console.readLine();
 
     Anagram anagram = new Anagram();
-    ArrayList<String> anagramList = anagram.manyWordCheck(userWords);
+    List<String> anagramList = anagram.manyWordCheck(userWords);
 
-    System.out.println(anagramList);
+    String outputLine = "Anagram set: ";
+    for(String anagramListWord: anagramList){
+      if(!anagramListWord.equals("|")){
+        outputLine += anagramListWord + " ";
+      } else if (outputLine.length() > 13){
+        System.out.println(outputLine);
+        outputLine = "Anagram set: ";
+      }
+    }
   }
 }
